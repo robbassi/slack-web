@@ -57,11 +57,11 @@ import Network.HTTP.Client.TLS (tlsManagerSettings)
 import Control.Monad.Reader
 
 -- servant
-import Servant.API
+import Servant.API hiding (addHeader)
 
 -- servant-client
 import Servant.Client hiding (Response, baseUrl)
-import Servant.Client.Core (Request, appendToQueryString)
+import Servant.Client.Core (Request, appendToQueryString, addHeader)
 
 -- slack-web
 import qualified Web.Slack.Api as Api
