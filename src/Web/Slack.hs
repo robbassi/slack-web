@@ -399,7 +399,7 @@ authenticateReq
   :: Text
   -> Request
   -> Request
-authenticateReq token = addHeader "Authorization" ("Bearer " <> token) . appendToQueryString "token" (Just token)
+authenticateReq token = addHeader "Authorization" ("Bearer " <> token)
 
 
 -- |
