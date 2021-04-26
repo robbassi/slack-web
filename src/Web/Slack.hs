@@ -60,7 +60,7 @@ import Servant.API
 
 -- servant-client
 import Servant.Client hiding (Response, baseUrl)
-import Servant.Client.Core (Request, appendToQueryString)
+import Servant.Client.Core (Request, appendToQueryString, addHeader)
 
 -- slack-web
 import qualified Web.Slack.Api as Api
@@ -398,8 +398,7 @@ authenticateReq
   :: Text
   -> Request
   -> Request
-authenticateReq token =
-  appendToQueryString "token" (Just token)
+authenticateReq token = addHeader "Authorization" ("Bearer " ++ token) . appendToQueryString "token" (Just token)
 
 
 -- |
