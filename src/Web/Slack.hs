@@ -60,7 +60,7 @@ import Servant.API
 
 -- servant-client
 import Servant.Client hiding (Response, baseUrl)
-import Servant.Client.Core (Request, appendToQueryString, addHeader)
+import Servant.Client.Core (Request, appendToQueryString)
 
 -- slack-web
 import qualified Web.Slack.Api as Api
