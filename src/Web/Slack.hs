@@ -41,6 +41,7 @@ import Data.Aeson
 -- base
 import Control.Arrow ((&&&))
 import Data.Maybe
+import Data.Monoid ((<>))
 import Data.Proxy (Proxy(..))
 
 -- containers
@@ -398,7 +399,7 @@ authenticateReq
   :: Text
   -> Request
   -> Request
-authenticateReq token = addHeader "Authorization" ("Bearer " ++ token) . appendToQueryString "token" (Just token)
+authenticateReq token = addHeader "Authorization" ("Bearer " <> token) . appendToQueryString "token" (Just token)
 
 
 -- |
